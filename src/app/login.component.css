@@ -1,0 +1,26 @@
+.login{
+    border-style: groove;
+    border-radius: 5px;
+    height: 22em;
+    width: 30em;
+    position: fixed;
+    left: 33%;
+    top: 5em;
+    text-align: center;
+    padding: 2em;
+}
+.legend{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 24px;
+    color: #000;
+    border-bottom: 0;
+}
+.add{
+    margin: 1em;
+    font-size: large;
+    width: 5em;
+}
+.logInp{
+    font-size: large;
+}

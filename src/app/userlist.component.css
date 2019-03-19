@@ -1,0 +1,169 @@
+.aaa{
+    position: fixed;
+    border-style: groove;
+    z-index: 1;
+    background: aliceblue;
+    left: 25%;
+    padding: 2em;
+    width: 35em;
+    height: 20em;
+    top: 5em;
+}
+/*строка поиска*/
+.toolbar{
+    position: relative;
+    top: 2em;
+    left: 20%;
+    height: 6em;
+    margin-left: -11em;
+}
+.inpName{
+    font-size: large;
+    left: 10em;
+    position: absolute;
+}
+.searchBut{
+    position: absolute;
+    left: 32.8em;
+    height: 36px;
+    width: 35px;
+    top: 0;
+}
+.allBut{
+    position: absolute;
+    left: 35.3em;
+    height: 36px;
+    width: 35px;
+    top: 0;
+}
+.select{
+    position: absolute;
+    left: 20em;
+    font-size: 30px;
+    top: -3px;
+}
+.addBut{
+    position: absolute;
+    left: 41em;
+    font-size: 21px;
+    top: 0;
+    width: 4em;
+}
+.bodyTempl{
+    border-style: groove;
+    height: 33.5em;
+    width: 60em;
+    left: 20%;
+    position: absolute;
+}
+/*список юзеров header*/
+.td-head{
+    display: flex;
+    border-style: groove;
+    margin: -3px;
+    height: 3em;
+}
+.td-name{
+    width: 25em;
+    text-align: center;
+    border-right-style: groove;
+    font-size: large;
+}
+.td-dep{
+    width: 12em;
+    text-align: center;
+    font-size: large;
+}
+.td-but{
+    width: 6em;
+    font-size: large;
+    border-left-style: groove;
+    text-align: center;
+}
+/*список юзеров list*/
+
+.td-user-list{
+    height: 30.7em;
+    overflow: overlay;
+    width: 61.3em;
+}
+.li-list{
+    display: flex;
+    list-style-type: none;
+    border-bottom-style: groove;
+    margin-left: -3em;
+}
+
+.li-name{
+    width: 19.7em;
+    text-align: center;
+    border-right-style: groove;
+    font-size: large;
+}
+.li-dep{
+    width: 9.5em;
+    font-size: large;
+    text-align: center;
+}
+.li-but{
+    width: 4.8em;
+    font-size: large;
+    border-left-style: groove;
+    text-align: center;
+}
+/*user info*/
+.lable{
+    display: block;
+    font-size: 25px;
+}
+.txtarea2{
+    max-height: 15em;
+    min-height: 15em;
+    max-width: 59.45em;
+    min-width: 59.45em;
+    display: table;
+    overflow: auto;
+}
+.butEdit{
+    font-size: large;
+}
+/*add user*/
+.createUser{
+    padding: 2em;
+}
+.add-inp{
+    width: 20em;
+    font-size: large;
+}
+.add-sel{
+    position: absolute;
+    left: 21.7em;
+    font-size: 28px;
+    top: 1em;
+}
+.add-txt{
+    max-height: 15em;
+    min-height: 15em;
+    max-width: 55.5em;
+    min-width: 55.5em;
+    display: table;
+}
+.add-but{
+    margin: 1em;
+    font-size: 20px;
+    width: 5em;
+}
+/* delete */
+#bodyDelete{
+    padding: 5em;
+    background: antiquewhite;
+    height: 33em;
+}
+.form-control{
+    font-size: large;
+}
+.exit-but{
+    margin-left: 1em;
+    font-size: 20px;
+    width: 5em;
+}

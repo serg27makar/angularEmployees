@@ -1,0 +1,124 @@
+<div class="toolbar">
+    <div class="search">
+        <input class="inpName" type='name' name="userName" [(ngModel)]="users.userName"/>
+        <button class="searchBut" (click)="search(users)"></button>
+        <button class="allBut" (click)="loadUsers()">X</button>
+    </div>
+    <div class="select" >
+        <select [(ngModel)]="users.department">
+        <option value="программист">программист</option>
+        <option value="менеджер">менеджер</option>
+        <option value="повар">повар</option>
+        <option value="грущик">грущик</option>
+        <option value="вахтер">вахтер</option>
+        <option value="этот">и этот</option>
+        </select>
+    </div>
+    <div>
+        <button class="addBut"  (click)="addUser()">Add</button>
+    </div>
+</div>
+
+<div class="bodyTempl">
+    <ng-template [ngTemplateOutlet]="loadTemplate(user)"
+                 [ngTemplateOutletContext]="{ $implicit: user}">
+    </ng-template>
+</div>
+
+<ng-template #readOnlyTemplate>
+    <div class="td-head">
+        <div class="td-name">Имя</div>
+        <div class="td-dep">Отдел</div>
+        <div class="td-but">изменить</div>
+        <div class="td-but">удалить</div>
+    </div>
+<div  class="td-user-list">
+    <ul>
+    <li class="li-list" *ngFor="let user of users" >
+        <div (click)="infoUser(user)"  class="li-name">{{user.userName}}</div>
+        <div class="li-dep">{{user.department}}</div>
+        <div>
+            <input type="button" value="Изменить" class="li-but" (click)="editUser(user)" />
+        </div>
+        <div>
+            <input type="button" value="Удалить" (click)="dell(user)" class="li-but" />
+        </div>
+    </li>
+    </ul>
+ </div>
+</ng-template>
+
+
+<ng-template #editTemplate>
+    <div class="createUser">
+        <div class="add-sel">
+        <label class="lable" >отдел</label>
+        <select [(ngModel)]="editedUser.department" >
+            <option value="программист">программист</option>
+            <option value="менеджер">менеджер</option>
+            <option value="повар">повар</option>
+            <option value="грущик">грущик</option>
+            <option value="вахтер">вахтер</option>
+            <option value="этот">и этот</option>
+        </select>
+    </div>
+    <label class="lable" >полное имя</label>
+        <input type="text" [(ngModel)]="editedUser.userName" class="add-inp"/>
+    <label class="lable">информация</label>
+        <textarea type="text" [(ngModel)]="editedUser.notes" class="add-txt"></textarea>
+                <button (click)="updateUser(editedUser)" class="add-but">Edit</button>
+                <button (click)="cancel()" class="add-but">Cancel</button>
+        </div>
+</ng-template>
+
+<ng-template #addTemplate>
+
+    <div class="createUser">
+        <div class="inputName">
+            <label class="lable">введите имя</label>
+            <input type="text" [(ngModel)]="editedUser.userName" class="add-inp" />
+        </div>
+        <div  class="add-sel">
+        <label class="lable" >отдел</label>
+        <select [(ngModel)]="editedUser.department">
+            <option > </option>
+            <option value="программист">программист</option>
+            <option value="менеджер">менеджер</option>
+            <option value="повар">повар</option>
+            <option value="грущик">грущик</option>
+            <option value="вахтер">вахтер</option>
+            <option value="этот">и этот</option>
+        </select>
+    </div>
+    <label class="lable">информация</label>
+        <textarea type="text" [(ngModel)]="editedUser.notes" class="add-txt"></textarea>
+                <button class="add-but" (click)="createUser(editedUser)">Add</button>
+                <button class="add-but" (click)="cancel()">Cancel</button>
+        </div>
+</ng-template>
+
+<ng-template #infoTemplate>
+    <div id="bodyInfo">
+        <h4>полное имя :</h4>
+        <input type="text" [(ngModel)]="editedUser.userName" class="form-control" readonly />
+        <h4>отдел :</h4>
+        <input type="text" [(ngModel)]="editedUser.department" class="form-control" readonly />
+        <h4>информация :</h4>
+        <textarea class="txtarea2" [(ngModel)]="editedUser.notes" readOnly></textarea>
+        <br/>
+        <button class="exit-but"  (click)="cancel()">выход</button>
+    </div>
+</ng-template>
+
+
+<ng-template #dellTemplate>
+
+<div id="bodyDelete">
+    <h3>Вы действительно хотите удалить этого сотрудника</h3>
+    <input type="text" [(ngModel)]="editedUser.userName" class="form-control" readonly />
+    <h3>Он профисиональный : <input type="text" [(ngModel)]="editedUser.department" class="form-control" readonly /></h3>
+    <button (click)="deleteUser(editedUser)" class="add-but">Delete</button>
+    <button class="add-but"  (click)="cancel()">выход</button>
+</div>
+
+</ng-template>
